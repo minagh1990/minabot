@@ -12,11 +12,5 @@ header('Content-type: application/json');
         'chat_id' => $message['chat']['id'],
         'text' => $replyText,
     ];
-	if($message['chat']['id']=="yes"){
-		$replyText='آیا عدد شما کمتر از 10است؟'
-	}
-	else{
-		$replyText ='سلام'
-	}
     echo json_encode($reply);
-?>
+
