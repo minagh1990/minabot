@@ -2,7 +2,7 @@
 set_time_limit(60);
 date_default_timezone_set('Asia/Tehran');
 header('Content-type: application/json');
-    $update = json_decode(file_get_contents('php://input'));
+    $update = json_decode(file_get_contents('php://input'),true);
     $message = $update["message"];
     $telegram_id = $message['from']['id'];
     $userInput = $message['text'];
@@ -14,8 +14,7 @@ header('Content-type: application/json');
     ];
     echo json_encode($reply);
     
-     $update2 = json_decode(file_get_contents('php://input'));
- if($update2->message->text == '/yes') {
+ if($update->message->text == '/yes') {
      $replyText2='آیا عدد انتخابی شما از پانصد بیشتر است؟';
     $reply2 = [
         'method' => 'sendMessage',
