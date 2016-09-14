@@ -6,6 +6,7 @@ header('Content-type: application/json');
     $message = $update["message"];
     $telegram_id = $message['from']['id'];
     $userInput = $message['text'];
+    if(  $userInput=="/start"){
     $replyText = 'سلام به بازی حدس اعداد خوش آمدید.لطفا یک عدد از بین یک تا هزار انتخاب کنید و yesرا بزنید';
     $reply = [
         'method' => 'sendMessage',
@@ -13,6 +14,7 @@ header('Content-type: application/json');
         'text' => $replyText,
     ];
     echo json_encode($reply);
+    }
     
  if($userInput == "/yes") {
      $replyText2='آیا عدد انتخابی شما از پانصد بیشتر است؟';
