@@ -26,21 +26,13 @@ header('Content-type: application/json');
     ];
      echo json_encode($reply2);
 }
-     if($replyText2=="آیا عدد انتخابی شما از پانصد بیشتر است؟" && $userInput=="/no"){
-      $replyText4='آیا عدد انتخابی بیشتر از هشتصد است؟';
-          $reply4 = [
-        'method' => 'sendMessage',
-        'chat_id' => $message['chat']['id'],
-        'text' => $replyText4,
-    ];
-     echo json_encode($reply4); 
-}
- if($replyText2=="آیا عدد انتخابی شما از پانصد بیشتر است؟" && $userInput == "/yes") {
-     $replyText3='آیا عدد انتخابی شما از دویست و پنجاه بیشتر است؟';
+   else  if($userInput=="/no"){
+      $replyText3 = 'سلام به بازی حدس اعداد خوش آمدید.لطفا یک عدد از بین یک تا هزار انتخاب کنید و yesرا بزنید';
     $reply3 = [
         'method' => 'sendMessage',
         'chat_id' => $message['chat']['id'],
-        'text' => $replyText3,
+        'text' => $replyText,
     ];
-     echo json_encode($reply3);
- }
+    echo json_encode($reply3);
+}
+ 
