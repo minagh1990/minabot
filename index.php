@@ -14,7 +14,7 @@ header('Content-type: application/json');
     ];
     echo json_encode($reply);
     
- if($update->message->text == '/yes') {
+ if($userInput == "/yes") {
      $replyText2='آیا عدد انتخابی شما از پانصد بیشتر است؟';
     $reply2 = [
         'method' => 'sendMessage',
