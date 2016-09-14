@@ -6,14 +6,19 @@ header('Content-type: application/json');
     $message = $update["message"];
     $telegram_id = $message['from']['id'];
     $userInput = $message['text'];
-    if($update->message->text == '/yes') {
-    $replyText = 'سلام به بازی حدس اعداد خوش آمدید لطفا یک عدد از بین ده تا بیست انتخاب کنید و بعد از آن yes را بزنید';
- 
+    $replyText = 'سلام به بازی حدس اعداد خوش آمدید.لطفا یک عدد از بین یک تا هزار انتخاب کنید و yesرا بزنید';
     $reply = [
         'method' => 'sendMessage',
         'chat_id' => $message['chat']['id'],
         'text' => $replyText,
     ];
     echo json_encode($reply);
-
+ if($update->message->text == '/yes') {
+     $replyText2='آیا عدد انتخابی شما از پانصد بیشتر است؟';
+    $reply2 = [
+        'method' => 'sendMessage',
+        'chat_id' => $message['chat']['id'],
+        'text' => $replyText2,
+    ];
+     echo json_encode($reply2);
 }
