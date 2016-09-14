@@ -26,8 +26,7 @@ header('Content-type: application/json');
         'text' => $replyText2,
     ];
      echo json_encode($reply2);
-}
-else if($userInput=="/no"){
+     if($userInput=="/no"){
       $replyText4='آیا عدد انتخابی بیشتر از هشتصد است؟';
           $reply4 = [
         'method' => 'sendMessage',
@@ -35,4 +34,5 @@ else if($userInput=="/no"){
         'text' => $replyText4,
     ];
      echo json_encode($reply4); 
+}
 }
