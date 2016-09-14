@@ -24,8 +24,7 @@ header('Content-type: application/json');
         'text' => $replyText2,
     ];
      echo json_encode($reply2);
-}
- if($userInput == "/yes"){
+      if($userInput == "/yes"){
           $replyText3='آیا عدد انتخابی شما از دویست و پنجاه بیشتر است؟';
           $reply3 = [
         'method' => 'sendMessage',
@@ -34,3 +33,13 @@ header('Content-type: application/json');
     ];
      echo json_encode($reply3);
      }
+}
+else if($userInput=="/no"){
+      $replyText4='آیا عدد انتخابی بیشتر از هشتصد است؟';
+          $reply4 = [
+        'method' => 'sendMessage',
+        'chat_id' => $message['chat']['id'],
+        'text' => $replyText4,
+    ];
+     echo json_encode($reply4); 
+}
