@@ -6,7 +6,9 @@ header('Content-type: application/json');
     $message = $update["message"];
     $telegram_id = $message['from']['id'];
     $userInput = $message['text'];
+    if($update->message->text == '/yes') {
     $replyText = 'سلام به بازی حدس اعداد خوش آمدید لطفا یک عدد از بین ده تا بیست انتخاب کنید و بعد از آن yes را بزنید';
+    }
     $reply = [
         'method' => 'sendMessage',
         'chat_id' => $message['chat']['id'],
