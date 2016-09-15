@@ -25,9 +25,6 @@ header('Content-type: application/json');
         'text' => $replyText2,
     ];
      echo json_encode($reply2);
-     InlineKeyboardButton[][] buttons1 = new InlineKeyboardButton[2][1];
-buttons1[0][0] = new InlineKeyboardButton("Yes", null, "آیا عدد انتخابی شما از هفتصدوپنجاه بیشتر است؟", null);
-buttons1[0][1] = new InlineKeyboardButton("No", null, "آیا عدد انتخابی شما از دویست و پنجاه بیشتر است؟", null);
 
 }
 
