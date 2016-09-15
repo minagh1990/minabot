@@ -32,7 +32,7 @@ switch ($userInput) {
         break;
     case 'بیشتره':
         $_SESSION['game_min'] = $_SESSION['game_selected'];
-        $_SESSION['game_selected'] = abs(($_SESSION['game_max']+$_SESSION['game_min'])/2);
+        $_SESSION['game_selected'] = round(($_SESSION['game_max']+$_SESSION['game_min'])/2);
         $replyText = 'عدد انتخابی شما 
         '.$_SESSION['game_selected'].'
         هستش؟';
@@ -43,7 +43,7 @@ switch ($userInput) {
         break;
     case 'کمتره':
         $_SESSION['game_max'] = $_SESSION['game_selected'];
-        $_SESSION['game_selected'] = abs(($_SESSION['game_max']+$_SESSION['game_min'])/2);
+        $_SESSION['game_selected'] = round(($_SESSION['game_max']+$_SESSION['game_min'])/2);
         $replyText = 'عدد انتخابی شما 
         '.$_SESSION['game_selected'].'
         هستش؟';
